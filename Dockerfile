@@ -9,7 +9,7 @@ COPY . /app
 WORKDIR /app
 
 FROM base AS prod-deps
-RUN pnpm install vite && pnpm install --prod --frozen-lockfile
+RUN pnpm install --prod --frozen-lockfile
 
 FROM base AS build
 RUN NODE_ENV=development pnpm install --frozen-lockfile
