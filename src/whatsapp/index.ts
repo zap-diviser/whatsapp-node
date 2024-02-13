@@ -164,7 +164,7 @@ class Whatsapp {
   }
 
   getSelfPhone() {
-    return this.sock.user?.id
+    return "+" + this.sock.user?.id?.split(":")[0]
   }
 
   async sendMessageWTyping(msg: AnyMessageContent, phone: string) {
