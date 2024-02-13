@@ -163,6 +163,10 @@ class Whatsapp {
     return this.sock
   }
 
+  getSelfPhone() {
+    return this.sock.user?.id
+  }
+
   async sendMessageWTyping(msg: AnyMessageContent, phone: string) {
     const result = await this.sock.onWhatsApp(phone).catch(() => null)
 

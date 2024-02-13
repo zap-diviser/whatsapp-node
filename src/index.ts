@@ -47,7 +47,7 @@ async function main () {
   })
 
   whatsapp.onConnected(async () => {
-    await queue.add("Whatsapp", { event: "connected", instanceId })
+    await queue.add("Whatsapp", { event: "connected", instanceId, data: { phone: whatsapp.getSelfPhone() } })
   })
 }
 
